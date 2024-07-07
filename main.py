@@ -55,10 +55,10 @@ num_classes = 2
 
 # Creating an initial population of neural networks. The return of the initial_population() function holds references
 # to the networks, not their weights. Using such references, the weights of all networks can be fetched.
-num_solutions = 20  # 6  # A solution or a network can be used interchangeably.
+num_solutions = 30  # 6  # A solution or a network can be used interchangeably.
 GANN_instance = pygad.gann.GANN(num_solutions=num_solutions,
                                 num_neurons_input=num_inputs,
-                                num_neurons_hidden_layers=[12, 8],
+                                num_neurons_hidden_layers=[8, 8],
                                 num_neurons_output=num_classes,
                                 hidden_activations=["relu", "relu"],
                                 output_activation="softmax")
@@ -77,7 +77,7 @@ initial_population = population_vectors.copy()
 
 num_parents_mating = 10  # 4  # Number of solutions to be selected as parents in the mating pool.
 
-num_generations = 200  # 500 # Number of generations.
+num_generations = 300  # 500 # Number of generations.
 
 mutation_percent_genes = 5
 # Percentage of genes to mutate. This parameter has no action if the parameter mutation_num_genes exists.
@@ -88,11 +88,11 @@ crossover_type = "two_points"  # "single_point"  # Type of the crossover operato
 
 mutation_type = "random"  # Type of the mutation operator.
 
-keep_parents = 1
+keep_parents = 0
 # Number of parents to keep in the next population. -1 means keep all parents and 0 means keep nothing.
 
-init_range_low = -2
-init_range_high = 5
+init_range_low = -2  # -2
+init_range_high = 5  # -5
 
 ga_instance = pygad.GA(num_generations=num_generations,
                        num_parents_mating=num_parents_mating,

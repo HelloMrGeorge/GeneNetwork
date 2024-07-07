@@ -130,4 +130,5 @@ dmypy.json
 
 # George customized
 model/
+data/
 .idea/
